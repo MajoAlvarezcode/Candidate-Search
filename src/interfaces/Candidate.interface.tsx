@@ -1,5 +1,5 @@
 
-interface Candidate {
+export interface Candidate {
     id: number; // ID único del candidato
     login: string; // Nombre de usuario en GitHub
     name?: string; // Nombre real del candidato (opcional)
@@ -9,3 +9,5 @@ interface Candidate {
     company?: string; // Compañía donde trabaja (opcional)
     bio?: string; // Biografía del candidato (opcional)
 }
+
+

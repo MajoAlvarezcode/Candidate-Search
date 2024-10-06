@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { searchGithub } from '../api/API';
-
+import {Candidate} from '../interfaces/Candidate.interface';
 
 const styles = {
     CardStyle: {
@@ -34,12 +34,8 @@ const styles = {
 };
 
 
-
-
-
-
 const CandidateSearch = () => {
-    const [githubUsers, setGithubUser] = useState<any[]>([]);
+    const [githubUsers, setGithubUser] = useState<Candidate[]>([]);
     const [currentUserIndex, setCurrentUserIndex] = useState(0);
 
 
@@ -59,9 +55,9 @@ const CandidateSearch = () => {
 
 
         // Guardar en localStorage
-        let savedCandidates = JSON.parse(localStorage.getItem('SavedCandidates') || '[]');
-        savedCandidates.push(currentUser);
-        localStorage.setItem('SavedCandidates', JSON.stringify(savedCandidates));
+        let savedCandidates: Candidate[] = JSON.parse(localStorage.getItem('SavedCandidates') || '[]');
+    savedCandidates.push(currentUser);
+    localStorage.setItem('SavedCandidates', JSON.stringify(savedCandidates));
 
 
 

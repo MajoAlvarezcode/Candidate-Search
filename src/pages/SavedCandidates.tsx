@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-
+import { Candidate } from '../interfaces/Candidate.interface';
 
 const SavedCandidates = () => {
-    const [savedCandidates, setSavedCandidates] = useState<any[]>([]);
+    const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
 
 
     // Cargar candidatos desde el localStorage
     useEffect(() => {
-        const storedCandidates = JSON.parse(localStorage.getItem('SavedCandidates') || '[]');
+        const storedCandidates: Candidate[] = JSON.parse(localStorage.getItem('SavedCandidates') || '[]');
         setSavedCandidates(storedCandidates);
     }, []);
 
