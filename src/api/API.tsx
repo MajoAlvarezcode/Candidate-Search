@@ -1,12 +1,12 @@
 const searchGithub = async () => {
   try {
     const start = Math.floor(Math.random() * 100000000) + 1;
-    // console.log(import.meta.env);
-    const response = await fetch(
+    console.log(import.meta.env);
+    const response = await fetch( 
       `https://api.github.com/users?since=${start}`,
       {
         headers: {
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
         },
       }
     );
@@ -27,7 +27,7 @@ const searchGithubUser = async (username: string) => {
   try {
     const response = await fetch(`https://api.github.com/users/${username}`, {
       headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
       },
     });
     const data = await response.json();
