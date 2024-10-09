@@ -1,6 +1,10 @@
 
 # Candidate Search
 
+## Link to deployed app
+
+https://candidates-search.netlify.app/
+
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
